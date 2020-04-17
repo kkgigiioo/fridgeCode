@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fridgecodemobileapp",
+  "private_key_id": "57e126c817a6d27f84d660265d6686490f8f42ca",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDG3U64S464Jh6I\njgRWAm3cKuOpQRy38+Hu2Dnjj5pqeN06a1zpAmMlOIUQRppCctFOIzPKqFwSW4qh\n3++utQrMmTcdAaP8Wi53OvnlgbzwBXl0tSWbvbDNpqTt8irtPCaVLP/NRix8L2jI\nTAj9ZSd5MH0GrCi6Z6/jH40Mbna99g+CBuvRE9loXhFJ6wwc+IMeW0jnqR14oFd5\nimt5iwPrAj4W6+6FKFXgRWqE9HNAxK3I6/oCmyICWtHUuln1c12xkwVKLJHWGs/P\n6nfPYb3uCptNcgJPfaMSezkbZmDX+CRNipPezmFAqzNmSfklpAB97KHk1trb+oZe\n12WOevIrAgMBAAECggEAYXNm1Zo1LJmFge5yQoG7O1aLLNB7Fcv+DhDIwXKIPZ/P\n7YZaR9cDJeS+FD08784bMnq+sRNy1w4j7/JwnoEacyur3duFdC7vMT9l4WmD4G0W\nWTJB5UF+KDD/BpmTHqFI2PZtvjaiqxKCexEDoMUWpGU2B3SLGtmf0CGQeaSSLMDQ\nGpqKPs2KUpeu6LV0qYH5gekrSiXokLvrz9oMeZZ2pPuLGHtgmLp2dpz9SHbKTt//\ngZE0Oq8sWr05WjMTz/XVSMj9cKI/Kq8KykoIX0OMcDDrWQ2kKq/g//QY1WtGVgTB\nCCfZEp6QmGicmYl4YNN1h2u7zb29nwV0Q0BRCg/KDQKBgQDoQuoXimY4Qu4WI7b3\nMwJ4+W6BKEIBZV/NL8ilgo0AMUiygyQoy3RYAAOAhwIDySKdL5ZHdxb5dVUO+mIU\nHwPA2DWE/VUzGQSQ2NvlqWT8l3DBGiIBUaNf3rHhu61tFSWpsaBMLnh8LlDAq4kr\nrkLonI8Wx0X+qh7fTLYn7n9HnQKBgQDbMJFlzdgWVIkO+4XHpB/Cy3BBkMDpbcoY\nZ6yPK2RAbkmd2Nz8ts4ZlVklohHuesRuBGsnVA+pniLX6+Xkv24LXYCKeHA9alsX\n+qhHYDrQSVJyHchFoyCv09sgdsdEOGOdXD704kpFY2UoThCbc9VXxUvu5UK/Ruvg\nM/WIO40KZwKBgEA4aFPT/8mksAJNI8UcRJ3Akk6CHCYYqrGoeblR7LzV470AR9pD\nz0qZzl4WdncngTunMc1W33JggAFhOAdKQBZtcfbwuUMksr9+RucsvHCfSx0Jpcdp\nlFvozpSU+TIFO+G87I7D9qqXf9qWU5pRV8zLpUDuHqt4zIp/woouBuF9AoGAU+Wy\nMZJpvJpc38Q8f579nTT7Yc1DWdXxPggoz6AfPl44hVeltoFOQBKfTb1MOcj5+NZu\nIV6WpCjoU1dy5myzdVwzwEy7QXa9KV+DG9bkjCcUjKODrcvzzfk8bZ+pRB6FWo0d\nd+RJ42dZJ+VBjA75QSA+oVFVjBtcW7Pnrl6E7M8CgYEAg0YUJ+ogRvR2bCgP1QVt\nvXYhFRBeGYfS5lkE0v0TFU9OVG0Lekm6uos61sYVZDg578lcUQCbKHYY+Ckuh1wW\nK+CZ5i36TAJrWn3qg0Xhk5lKrGH1odx5n4LTks2vweYBnqhG0S2LhYXKsp/5v5gY\niRwrpoLlBbydgTZXMH41iYY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-kfeab@fridgecodemobileapp.iam.gserviceaccount.com",
+  "client_id": "117895315473308712881",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-kfeab%40fridgecodemobileapp.iam.gserviceaccount.com"
+}

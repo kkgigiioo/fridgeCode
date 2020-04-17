@@ -1,23 +1,26 @@
 @extends('layouts.app')
-
+@section('title')
+HOME
+@endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+    <div class="row">
+        <?php
+            foreach ($data as $key2=>$datas){
+                echo '
+                    <div class="card text-center" style="width: 18rem; margin-top:1rem; margin-left:2rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">', $datas['name'], '</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">', $datas['barcode'], '</h6>
+                            <p class="card-text">', $datas['brand'], '</p>
                         </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+                    </div>
+                ';
+            }
+        ?>
     </div>
-</div>
+    <div class="row">
+            <div class="col-md-2">
+                {{ $userId }}
+            </div>
+    </div>
 @endsection
