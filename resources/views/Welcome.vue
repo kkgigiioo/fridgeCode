@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Welcome</title>
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        <!-- Third party plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
+<template>
+    <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="/home">Fridge Code Web App</a>
@@ -50,7 +32,7 @@
             </div>
         </header>
         <!-- About section-->
-        <section class="page-section bg-primary" id="about">
+        <div class="page-section bg-primary" id="about">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -61,9 +43,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         <!-- Services section-->
-        <section class="page-section" id="services">
+        <div class="page-section" id="services">
             <div class="container">
                 <h2 class="text-center mt-0">Sign in</h2>
                 <p class="text-muted text-center mb-0">Let's do something wonderful!</p>
@@ -96,16 +78,16 @@
                     <a class="btn btn-primary btn-xl" style="display: block; margin: 0 auto;" href="/login">Sign in now!</a>
                 </div>
             </div>
-        </section>
+        </div>
         <!-- Call to action section-->
-        <section class="page-section bg-dark text-white" id="registration">
+        <div class="page-section bg-dark text-white" id="registration">
             <div class="container text-center">
                 <h2 class="mb-4">Free Registration for the Fridge Code Web App!</h2>
                 <a class="btn btn-light btn-xl" href="/register">Register Now!</a>
             </div>
-        </section>
+        </div>
         <!-- Contact section-->
-        <section class="page-section" id="contact">
+        <div class="page-section" id="contact">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -125,18 +107,20 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Footer-->
-        <footer class="bg-light py-4">
-            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Fridge Code Web App</div></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+        </div>
+</template>
+
+<script>
+export default {
+    name: 'welcome',
+    data() {
+        return {
+            
+        }
+    },
+}
+</script>
+
+<style>
+
+</style>

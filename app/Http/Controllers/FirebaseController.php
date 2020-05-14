@@ -10,7 +10,6 @@ use Kreait\Firebase\ServiceAccount;
 use Kreait\Firebase\Database;
 use Kreait\Firebase\Auth;
 
-$AUTHUID ="";
 
 class FirebaseController extends Controller
 {
@@ -28,9 +27,9 @@ class FirebaseController extends Controller
         return view('home', compact('data'));
     }
 
-    public function logIn() {
+    public function logIn(Request $request) {
         if(isset($_POST['loginBtn'])){
-            $firebase = (new Factory)
+            /*$firebase = (new Factory)
                 ->withServiceAccount(__DIR__.'/firebaseJson.json')
                 ->withDatabaseUri('https://fridgecodemobileapp.firebaseio.com/');
             
@@ -41,8 +40,10 @@ class FirebaseController extends Controller
             
 
             $user = $auth->signInWithEmailAndPassword($email, $pass);
-            $userId=$user;
-            return redirect('home', compact('userId'));
+            
+            return redirect('home');*/
+
+            $userId = $_POST['auid'];
 
             
 
@@ -82,7 +83,7 @@ class FirebaseController extends Controller
         }
     }
 
-    public function reg() {
+    public function reg(Request $request) {
         if(isset($_POST['regBtn'])){
             $firebase = (new Factory)
                 ->withServiceAccount(__DIR__.'/firebaseJson.json')

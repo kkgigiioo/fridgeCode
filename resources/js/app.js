@@ -1,32 +1,36 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
+import VueRouter from 'vue-router';
+import routes from './routes';
+import axios from 'axios';
+import firebase from 'firebase/app';
 
 window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.prototype.$axios = axios;
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDmWjRTN2Z621-LE04YNc3gCB-DyEOsKvQ",
+    authDomain: "fridgecodemobileapp.firebaseapp.com",
+    databaseURL: "https://fridgecodemobileapp.firebaseio.com",
+    projectId: "fridgecodemobileapp",
+    storageBucket: "fridgecodemobileapp.appspot.com",
+    messagingSenderId: "362659499973",
+    appId: "1:362659499973:web:2704d19759d8d88c1ec5ac"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-const app = new Vue({
-    el: '#app',
-});
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    routes
+})
+
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app');

@@ -1,25 +1,25 @@
-@extends('layouts.app')
-@section('title')
-REGISTRATION
-@endsection
-@section('content')
-	<div class="limiter">
+<template>
+    <div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" method="POST" action="" enctype="multipart/from-data">
+                <div v-if="error" class="error">
+                    {{ error.message }}
+                </div>
+
+				<form class="login100-form validate-form" @submit.prevent = "pressed">
 				@csrf
 					<span class="login100-form-title p-b-49">
 						Registration
 					</span>
                     <div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="email" name="regEmail" placeholder="Type your email address">
+						<input class="input100" type="email" v-model="regEmail" name="regEmail" placeholder="Type your email address">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="regPass" placeholder="Type your password">
+						<input class="input100" type="password" v-model="regPass" name="regPass" placeholder="Type your password">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
                     </div>
 
@@ -71,5 +71,44 @@ REGISTRATION
 				</form>
 			</div>
 		</div>
-	</div>
-@endsection
+	</div>    
+</template>
+
+<script>
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+
+export default {
+	methods: {
+		async pressed() {
+			try {
+				if(regPass == regPass2) {
+					const user = firebase.auth().createUserWithEmailAndPassword(this.regEmail, this.regPass);
+				console.log(user);
+				this.$router.replace({name:"home"});
+				}
+				else {
+					error.message = "Nem egyeznek a jelszavak";
+				}
+				
+			} 
+			catch(err) {
+				console.log(err);
+			}
+			
+		}
+	},
+	data() {
+		return {
+			regEmail: '',
+			regPass: '',
+			regPass2: '',
+			error: ''
+		}
+	}
+}
+</script>
+
+<style>
+
+</style>

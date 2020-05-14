@@ -18,9 +18,4 @@ HOME
             }
         ?>
     </div>
-    <div class="row">
-            <div class="col-md-2">
-                {{ $userId }}
-            </div>
-    </div>
 @endsection

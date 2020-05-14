@@ -25,10 +25,4 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::post('/login', 'FirebaseController@logIn');
 Route::post('/register', 'FirebaseController@reg');
-/*
-Route::post('/login', 'FirebaseController@logInGoogle');
-Route::post('/login', 'FirebaseController@logInFacebook');
-Route::post('/login', 'FirebaseController@logInTwitter');
-*/
