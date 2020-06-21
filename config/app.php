@@ -227,4 +227,5 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
 ];

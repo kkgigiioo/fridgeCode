@@ -15,14 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Auth::routes();
 
-Route::get('/home', 'FirebaseController@index')->name('home');
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::post('/register', 'FirebaseController@reg');
+Route::get('/home', 'HomeController@index')->name('home');
