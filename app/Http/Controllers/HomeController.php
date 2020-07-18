@@ -34,8 +34,17 @@ class HomeController extends Controller
             ->join('units', 'units.id', '=', 'purchases.unit_id')
             ->select('products.name', 'products.picture_url', 'products.barcode', 'products.expiration', 'purchases.number_of_item', 'units.unitName')
                 ->where('purchases.user_id', '=', $user_id->id)
+            ->orderBy('products.name')
             ->get();
 
+        foreach($data as $item) {
+            if($item->expiration < date('Y-m-d',strtotime("+10 day"))) {
+                session()->flash('danger', 'The product will expire soon');
+            }
+            if($item->number_of_item < 2 && strcmp($item->unitName, 'piece') !== 0) {
+                session()->flash('warning', 'Slowly out of stock');
+            }
+        }
 
         return view('home', compact('data'));
     }
