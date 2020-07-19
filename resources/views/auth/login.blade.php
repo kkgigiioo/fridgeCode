@@ -1,20 +1,26 @@
 @extends('layouts.app')
+
 @section('title')
-{{ __('Login') }}
+	{{ __('Login') }}
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('js/loginValidate.js') }}" defer></script>
+@endsection
+
 @section('content')
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form" method="POST" action="{{ route('login') }}" enctype="multipart/from-data">
+				<form class="login100-form validate-form" id="login-form" method="POST" action="{{ route('login') }}" enctype="multipart/from-data">
 					@csrf
 					<span class="login100-form-title p-b-49">
                         {{ __('Login') }}
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is required">
 						<input class="input100" type="email" id="email" name="email" placeholder="Type your email">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
+						<span class="focus-input100" data-symbol="&#64;"></span>
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -25,7 +31,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<input class="input100" type="password" id="password" name="password" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
+						<span class="focus-input100" data-symbol="&#128477;"></span>
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -39,7 +45,7 @@
                             {{ __('Forgot password?') }}
 						</a>
 					</div>
-					
+
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>

@@ -36,6 +36,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
+    @yield('scripts')
 
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -45,9 +47,6 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
-<script src="{{ asset('js/signInJs.js') }}" defer></script>
 </head>
 <body>
     <div id="app">

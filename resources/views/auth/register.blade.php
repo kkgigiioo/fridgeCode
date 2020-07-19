@@ -1,22 +1,28 @@
 @extends('layouts.app')
+
 @section('title')
-{{ __('REGISTRATION') }}
+    {{ __('REGISTRATION') }}
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('js/regValidate.js') }}" defer></script>
+@endsection
+
 @section('content')
 <div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" id="reg-form" action="{{ route('register') }}">
                     @csrf
 
                     <span class="login100-form-title p-b-49">
                     {{ __('Registration') }}
 					</span>
 
-                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Firstname is reauired">
+                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Firstname is required">
                         <input id="firstName" type="text" class="input100 @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" 
-                        required autocomplete="namfirstNamee" placeholder="Type your firstname" autofocus>
-                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        required autocomplete="firstName" placeholder="Type your firstname" autofocus>
+                        <span class="focus-input100" data-symbol="&#x263B;"></span>
 
                         @error('firstName')
                             <span class="invalid-feedback" role="alert">
@@ -25,10 +31,10 @@
                         @enderror
                     </div>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Lastname is reauired">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Lastname is required">
                         <input id="lastName" type="text" class="input100 @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" 
                         required placeholder="Type your lastname" autocomplete="lastName">
-                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        <span class="focus-input100" data-symbol="&#x263A;"></span>
 
                         @error('lastName')
                             <span class="invalid-feedback" role="alert">
@@ -37,10 +43,10 @@
                         @enderror
                     </div>
 
-                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
+                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Email is required">
                         <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required
                         placeholder="Type your email address" autocomplete="email">
-                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        <span class="focus-input100" data-symbol="&#64;"></span>
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -49,10 +55,10 @@
                         @enderror
                     </div>
 
-                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Password is reauired">
+                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Password is required">
                         <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required
-                        placeholder="Type your password" autocomplete="new-password">
-                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        placeholder="Type your password">
+                        <span class="focus-input100" data-symbol="&#128477;"></span>
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -61,10 +67,10 @@
                         @enderror
                     </div>
 
-                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Password is reauired">
-                        <input id="password-confirm" type="password" class="input100" name="password_confirmation" required
-                        placeholder="Confirm Password" autocomplete="new-password">
-                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Password is required">
+                        <input id="password_confirmation" type="password" class="input100" name="password_confirmation" required
+                        placeholder="Confirm Password">
+                        <span class="focus-input100" data-symbol="&#128477;"></span>
                     </div>
 
                     <div class="text-right p-t-8 p-b-31"> </div>
