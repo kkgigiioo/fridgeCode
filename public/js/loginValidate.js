@@ -11,10 +11,8 @@ password.addEventListener('input', validate);
 function validate(e) {
     let target = e.target;
 
-    console.log(target.name);
     if(target.name === "email") {
         if(email_reg.test(target.value)){
-            //console.log(target.name);
             target.style.color='#44E444';
         }
         else {
