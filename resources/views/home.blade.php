@@ -11,18 +11,36 @@
     <div class="row">
          @foreach($data as $item) 
             @if($item->expiration < date('Y-m-d',strtotime("+10 day")))
-                <a href="/home/{{ $item->barcode }}">
-                <div class="card border-danger mb-3" style="width: 18rem; margin: 2rem;">
-                    <img class="card-img-top" src="{{ $item->picture_url }}" alt="{{ $item->name }} picture" style="height:15rem; object-fit:scale-down;">
-                    <div class="card-title">
-                        <h5  style="color:rgb(227, 36, 43);">{{ $item->name }}</h5>
-                    </div>
-                    <div class="card-body text-danger">
-                        <p class="card-text" style="color:rgb(227, 36, 43);">{{ $item->expiration }}</p>
-                        <p class="card-text" style="color:rgb(227, 36, 43);">{{ $item->number_of_item }} {{ $item->unitName }}</p>
-                    </div>
-                </div>
-                </a>
+                @for($i=0; $i < count($dataForRecipe); $i++)
+                    @if( isset($dataForRecipe) && strpos( strtolower($item->name), strtolower($dataForRecipe[$i]) ) !== false )
+                        <a href="/home/{{ $item->barcode }}">
+                        <div class="card border-danger mb-3" style="width: 18rem; margin: 2rem;">
+                            <img class="card-img-top" src="{{ $item->picture_url }}" alt="{{ $item->name }} picture" style="height:15rem; object-fit:scale-down;">
+                            <div class="card-title">
+                                <h5  style="color:rgb(227, 36, 43);">{{ $item->name }}</h5>
+                            </div>
+                            <div class="card-body text-danger">
+                                <p class="card-text" style="color:rgb(227, 36, 43);">{{ $item->expiration }}</p>
+                                <p class="card-text" style="color:rgb(227, 36, 43);">{{ $item->number_of_item }} {{ $item->unitName }}</p>
+                                <a href="/home/recipe/search" class="btn btn-danger">Go recipe</a>
+                            </div>
+                        </div>
+                        </a>
+                    @else
+                        <a href="/home/{{ $item->barcode }}">
+                            <div class="card border-danger mb-3" style="width: 18rem; margin: 2rem;">
+                                <img class="card-img-top" src="{{ $item->picture_url }}" alt="{{ $item->name }} picture" style="height:15rem; object-fit:scale-down;">
+                                <div class="card-title">
+                                    <h5  style="color:rgb(227, 36, 43);">{{ $item->name }}</h5>
+                                </div>
+                                <div class="card-body text-danger">
+                                    <p class="card-text" style="color:rgb(227, 36, 43);">{{ $item->expiration }}</p>
+                                    <p class="card-text" style="color:rgb(227, 36, 43);">{{ $item->number_of_item }} {{ $item->unitName }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    @endif
+                @endfor
             @elseif($item->number_of_item < 2 && strcmp($item->unitName, 'piece') !== 0)
                 <a href="/home/{{ $item->barcode }}">
                 <div class="card border-warning mb-3" style="width: 18rem; margin: 2rem;">
