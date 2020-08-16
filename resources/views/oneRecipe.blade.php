@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    {{ $test['name'] }}
+    {{ $test['name'] }} by Tasty
 @endsection
 @section('content')
     <div class="container">
@@ -18,6 +18,7 @@
                         </h5>
                 </div>
             </div>
+            <hr>
             
             @for($i=0; $i < count($test['instructions']); $i++)
                 @if($i == count($test['instructions'])-1)

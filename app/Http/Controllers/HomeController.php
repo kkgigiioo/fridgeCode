@@ -25,7 +25,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    //termékek megjelenítése a főoldalon + egyes elemek megjelenítése
+    //display products on the main page + display specific items
     public function index()
     {
         //temékek listázása adatbázisból
@@ -50,7 +50,7 @@ class HomeController extends Controller
             }
         }
 
-        //receptek a lejáró termékekhez
+        //recipes for expiring products
         $dataForRecipe = $this-> equalRecipe();
 
         if(isset($dataForRecipe)) {
@@ -113,7 +113,7 @@ class HomeController extends Controller
     }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------//
-    //recept api csatlakozás
+    //recipe api connection
     private function connect() {
         $curl = curl_init();
 
@@ -146,7 +146,7 @@ class HomeController extends Controller
         return $recipe;
     }
 
-    //receptek összehasonlítása termékekkel
+    //comparison of recipes with products
     private function equalRecipe() {
         $recipe = $this->connect();
         $data = DB::table('products')
