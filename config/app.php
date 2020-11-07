@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'FridgeCodeWebApp'),
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        FridgeCodeWebApp\Providers\AppServiceProvider::class,
-        FridgeCodeWebApp\Providers\AuthServiceProvider::class,
-        // FridgeCodeWebApp\Providers\BroadcastServiceProvider::class,
-        FridgeCodeWebApp\Providers\EventServiceProvider::class,
-        FridgeCodeWebApp\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

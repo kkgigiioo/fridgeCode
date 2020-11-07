@@ -18,8 +18,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/{id}', 'HomeController@show')->name('product');
-Route::get('/home/recipe/search', 'HomeController@search')->name('recipeSearch');
-
-Route::get('/recipe', 'RecipeController@apis')->name('recipe');
-Route::get('/recipe/{id}', 'RecipeController@show')->name('oneRecipe');
