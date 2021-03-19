@@ -12,6 +12,7 @@
             <div class="card" style="max-width:70%; min-width:50%;">
                 <div class="card-body">
                     <h1 class="card-title">{{ $item->name }}</h1>
+                    <p class="card-text"><h4><strong>Barcode:</strong> {{ $item->barcode }}</h4></p>
                     <p class="card-text"><h4><strong>Expiration:</strong> {{ $item->expiration }}</h4></p>
                     <p class="card-text"><h4>{{ $item->number_of_item }} {{ $item->unitName }}</h4></p>
                     <p class="card-text"><h4><strong>Brand:</strong> {{ $item->brandName }}</h4></p>
